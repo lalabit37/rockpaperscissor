@@ -9,15 +9,17 @@ namespace gameTime
     {
         static void Main(string[] args)
         {
-            int restart = 1; 
+            string restart = "1"; 
 
-            while (restart == 1)
+            while (restart != "2")
             {
                 
                 int pointA = 0;
                 int pointB = 0;
                 int i = 0;
+                Console.WriteLine("=======================================================================");
                 Console.WriteLine("*** Welcome to Rock Paper Scissors Lizard Spock Game ***");
+                Console.WriteLine("=======================================================================");
                 Console.WriteLine();
 
                 do
@@ -25,7 +27,7 @@ namespace gameTime
                     int r = i + 1;
                     Console.WriteLine();
                     Console.WriteLine("=======================================================================");
-                    Console.WriteLine("ROUND" + r);
+                    Console.WriteLine("ROUND " + r);
                     Console.WriteLine("=======================================================================");
                     Console.WriteLine();
                     Console.WriteLine("Choose your weapon:\n1->Rock\n2->Paper\n3->Scissors\n4->Lizard\n5->Spock");
@@ -80,7 +82,7 @@ namespace gameTime
                         Console.WriteLine("Player A WIN!");
                         pointA += 1;
                     }
-                    else if (playerA == "5" && playerB == "1")
+                    else if (playerA == "5" && playerB == "3")
                     {
                         Console.WriteLine("**********");
                         Console.WriteLine("Player A chose " + playerA);
@@ -180,7 +182,7 @@ namespace gameTime
                         Console.WriteLine("Player B WIN!");
                         pointB += 1;
                     }
-                    else if (playerB == "5" && playerA == "1")
+                    else if (playerB == "5" && playerA == "3")
                     {
                         Console.WriteLine("**********");
                         Console.WriteLine("Player A chose " + playerA);
@@ -242,11 +244,15 @@ namespace gameTime
                     }
                     else if (playerA == playerB)
                     {
+                        Console.WriteLine("**********");
+                        Console.WriteLine("Player A chose " + playerA);
+                        Console.WriteLine("Player B chose " + playerB);
+                        Console.WriteLine("**********");
                         Console.WriteLine("It is a draw");
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Input");
+                        Console.WriteLine("Incorrect Input, please enter 1, 2, 3, 4 or 5 Only");
                     }
 
                     i++;
@@ -284,6 +290,7 @@ namespace gameTime
                 Console.WriteLine();
                 Console.WriteLine("Play again? (Enter 1 or 2)");
                 Console.WriteLine("1. Yes\n2. No");
+                restart = Console.ReadLine();
                 Console.ReadLine();
 
             }
